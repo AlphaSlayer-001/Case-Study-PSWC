@@ -6,14 +6,13 @@ void print_grade_card(struct student *students, char *r_no, int no_students){
     int i;
     // to find the student with the specified roll number
     for (i = 0; i < no_students; i++) {
-        printf("%s\n", students[i].roll_no);
         if (strcmp(students[i].roll_no, r_no) == 0) {
             break; // student found
         }
     }
-    sleep(10);
+  
     // check if student with the specified roll number was found
-    if (i == no_students) {
+    if (i != no_students) {
         printf("\t\t\t\t\t   Student with roll number %s not found.\n", r_no);
         clear_input_buffer();
         printf("\t\t\t\t\t   Press any key to return..\n");
