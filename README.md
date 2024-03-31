@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the source code for a case study project focusing on a system for managing student records and grades, particularly in the context of a course named PWSC (Placeholder for a Course Name). The project aims to demonstrate concepts of software development and data management in an educational setting.
+This repository contains the source code for a case study project focusing on a system for managing student records and grades, particularly in the context of the course, PWSC. The project aims to demonstrate concepts of software development and data management in an educational setting.
 
 ## Features
 
