@@ -101,10 +101,10 @@ void details(struct student *students, int *no_students){
     students[4].isa_1[1] = 38;
     students[4].isa_1[2] = 40;
     //isa2
-    students[4].isa_1[0] = 46;
-    students[4].isa_1[1] = 50;
-    students[4].isa_1[2] = 49;
-    //isa2
+    students[4].isa_2[0] = 46;
+    students[4].isa_2[1] = 50;
+    students[4].isa_2[2] = 49;
+    //esa
     students[4].esa[0] = 96;
     students[4].esa[1] = 100;
     students[4].esa[2] = 99;
@@ -116,5 +116,4 @@ void details(struct student *students, int *no_students){
     students[4].total[2] = (students[4].isa_1[2] + students[4].isa_2[2]) /2.0 + students[4].esa[2] / 2.0; //math
     students[4].grade[2] = 'S';
 
-    *no_students += 5;
 }
