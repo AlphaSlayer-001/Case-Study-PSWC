@@ -25,3 +25,23 @@ void clear_input_buffer() {
     while ((c = getchar()) != '\n' && c != EOF); // Clear input buffer
 }
 
+void whitespace(char *str) {
+    int len = strlen(str);
+    int start = 0, end = len - 1;
+
+    // Remove leading whitespaces
+    while (isspace(str[start])) {
+        start++;
+    }
+
+    // Remove trailing whitespaces
+    while (end > 0 && isspace(str[end])) {
+        end--;
+    }
+
+    // Shift characters to remove leading whitespaces
+    for (int i = start; i <= end; i++) {
+        str[i - start] = str[i];
+    }
+    str[end - start + 1] = '\0'; // Terminate the string properly
+}
