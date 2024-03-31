@@ -13,9 +13,9 @@ This repository contains the source code for a case study project focusing on a 
 
 ## Technologies Used
 
-Language: C
-IDE: Any C-compatible IDE (e.g., Visual Studio Code, Xcode, Code::Blocks)
-Dependencies: None
+- Language: C
+- IDE: Kate
+- Dependencies: None
 
 ## Getting Started
 
