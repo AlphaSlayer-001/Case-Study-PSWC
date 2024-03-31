@@ -30,8 +30,13 @@ To run the program locally, follow these steps:
     cd Case-Study-PWSC
 ```
 3. Compile the source code:
+ - Linux:
 ```
     make -f makefile.mk
+```
+ - Windows using mingw:
+```
+    mingw32-make -f makefile.mk
 ```
 4. Run the executable:
 ```
