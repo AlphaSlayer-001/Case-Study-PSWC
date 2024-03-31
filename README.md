@@ -21,23 +21,23 @@ This repository contains the source code for a case study project focusing on a 
 
 To run the program locally, follow these steps:
 
-    1. Clone the repository:
+1. Clone the repository:
 ```
     git clone https://github.com/your-username/Case-Study-PWSC.git
 ```
-    2. Navigate to the project directory:
+2. Navigate to the project directory:
 ```
     cd Case-Study-PWSC
 ```
-    3. Compile the source code:
+3. Compile the source code:
 ```
     gcc main.c -o main
 ```
-    4. Run the executable:
+4. Run the executable:
 ```
     ./main
 ```
-    5. Follow the on-screen instructions to interact with the program.
+5. Follow the on-screen instructions to interact with the program.
 
 ## Contributing
 
