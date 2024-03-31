@@ -31,7 +31,7 @@ To run the program locally, follow these steps:
 ```
 3. Compile the source code:
 ```
-    gcc main.c -o main
+    make -f makefile.mk
 ```
 4. Run the executable:
 ```
