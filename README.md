@@ -35,7 +35,7 @@ To run the program locally, follow these steps:
 ```
 4. Run the executable:
 ```
-    ./main
+    ./result 
 ```
 5. Follow the on-screen instructions to interact with the program.
 
