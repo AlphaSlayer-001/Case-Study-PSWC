@@ -6,16 +6,16 @@ This repository contains the source code for a case study project focusing on a 
 
 ## Features
 
-    -**Add New Student**: Allows users to add new student records including name, roll number, and marks for various assessments.
-    -**Update Marks**: Enables users to update the marks of existing students for different assessments.
-    -**Print Grade Card**: Displays the grade card of a student based on their roll number.
-    -**Exit**: Allows users to exit the program.
+-**Add New Student** : Allows users to add new student records including name, roll number, and marks for various assessments.
+-**Update Marks**: Enables users to update the marks of existing students for different assessments.
+-**Print Grade Card**: Displays the grade card of a student based on their roll number.
+-**Exit**: Allows users to exit the program.
 
 ## Technologies Used
 
-    Language: C
-    IDE: Any C-compatible IDE (e.g., Visual Studio Code, Xcode, Code::Blocks)
-    Dependencies: None
+Language: C
+IDE: Any C-compatible IDE (e.g., Visual Studio Code, Xcode, Code::Blocks)
+Dependencies: None
 
 ## Getting Started
 
