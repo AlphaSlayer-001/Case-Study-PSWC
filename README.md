@@ -1,23 +1,23 @@
-#Case Study: Sudent Record Management system
+# Case Study: Sudent Record Management system
 
-##Overview
+## Overview
 
 This repository contains the source code for a case study project focusing on a system for managing student records and grades, particularly in the context of a course named PWSC (Placeholder for a Course Name). The project aims to demonstrate concepts of software development and data management in an educational setting.
 
-##Features
+## Features
 
     -**Add New Student**: Allows users to add new student records including name, roll number, and marks for various assessments.
     -**Update Marks**: Enables users to update the marks of existing students for different assessments.
     -**Print Grade Card**: Displays the grade card of a student based on their roll number.
     -**Exit**: Allows users to exit the program.
 
-##Technologies Used
+## Technologies Used
 
     Language: C
     IDE: Any C-compatible IDE (e.g., Visual Studio Code, Xcode, Code::Blocks)
     Dependencies: None
 
-##Getting Started
+## Getting Started
 
 To run the program locally, follow these steps:
 
@@ -27,11 +27,11 @@ To run the program locally, follow these steps:
 ```
     2. Navigate to the project directory:
 ```
-cd Case-Study-PWSC
+    cd Case-Study-PWSC
 ```
     3. Compile the source code:
 ```
-gcc main.c -o main
+    gcc main.c -o main
 ```
     4. Run the executable:
 ```
@@ -39,7 +39,7 @@ gcc main.c -o main
 ```
     5. Follow the on-screen instructions to interact with the program.
 
-##Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
