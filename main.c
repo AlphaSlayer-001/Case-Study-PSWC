@@ -10,6 +10,7 @@ int main(){
     do {
         clearScreen();
         display_design();
+
         // display menu
         printf("\n\t\t\t\tMenu:\n");
         printf("\t\t\t\t1. Print Grade Card\n");
