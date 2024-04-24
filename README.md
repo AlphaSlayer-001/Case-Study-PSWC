@@ -23,7 +23,7 @@ To run the program locally, follow these steps:
 
 1. Clone the repository:
 ```
-    git clone https://github.com/your-username/Case-Study-PWSC.git
+    git clone https://github.com/AlphaSlayer-001/Case-Study-PWSC.git
 ```
 2. Navigate to the project directory:
 ```
