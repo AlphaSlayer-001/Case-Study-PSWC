@@ -1,29 +1,20 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
-#include<ctype.h>
+#include<windows.h>
 #include<unistd.h>
 
-#define max_len 100
-#define max_no_students 100
+typedef struct student{
+    char roll[14];
+    char name[100];
+    char sec;
+    int isa1[5];
+    int isa2[5];
+    int esa[5];
+}student;
 
-extern int no_students, temp;
-
-struct student{
-    char name[max_len];
-    char roll_no[5];
-    int isa_1[3];
-    int isa_2[3];
-    int esa[3];
-    float total[3];
-    char grade[3];
-};
-
-int str_size(char *string);
-void clear_input_buffer();
-void clearScreen();
-void whitespace(char *str);
-void details(struct student *students, int *no_students);
-void display_design();
-void print_grade_card(int no_students, struct student *students, char *r_no);
-void add_new_student(struct student *students, int *no_students);
-void update_marks(struct student *students, int no_students);
+void display();
+void print_grade(student *s, char r_no[14]);
+void star(int n);
+void update(student *p, char r_n[14]);
+void add(student *s, int *num);
