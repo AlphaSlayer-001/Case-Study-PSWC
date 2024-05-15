@@ -1,36 +1,46 @@
-#include"header.h"
+#include "headers.h"
 
-void add(student *s, int *num){
-    if (*num >= 10) {
-        printf("Maximum number of students reached.\n");
+void add_new_student(std *students, int *n) {
+    if (*n >= MAX_NO_STUDENTS) {
+        printf("Cannot add more students. Maximum limit reached.\n");
         return;
     }
 
-    printf("Enter student details:\n");
+    int new_rno;
+    printf("Enter roll number of the student: ");
+    scanf("%d", &new_rno);
 
-    printf("Roll number (12 characters): ");
-    scanf("%s", s[*num].roll);
-
-    printf("Name: ");
-    scanf("%s", s[*num].name);
-
-    printf("Section: ");
-    scanf(" %c", &s[*num].sec);
-
-    printf("Enter ISA1 marks for 5 subjects: ");
-    for (int i = 0; i < 5; ++i) {
-        scanf("%d", &s[*num].isa1[i]);
+    // Check if the entered roll number already exists
+    for (int i = 0; i < *n; i++) {
+        if (students[i].rno == new_rno) {
+            printf("Roll number %d already exists. Please enter a different roll number.\n", new_rno);
+            return;
+        }
     }
 
-    printf("Enter ISA2 marks for 5 subjects: ");
-    for (int i = 0; i < 5; ++i) {
-        scanf("%d", &s[*num].isa2[i]);
-    }
+    system("cls");
+    display_logo();
+    // If roll number doesn't exist, proceed with adding the new student
+    strcpy(students[*n].name, "");
+    students[*n].rno = new_rno;
 
-    printf("Enter ESA marks for 5 subjects: ");
-    for (int i = 0; i < 5; ++i) {
-        scanf("%d", &s[*num].esa[i]);
-    }
+    printf("Enter name of the student: ");
+    scanf("%s", students[*n].name);
 
-    (*num)++;
+    printf("Enter section of the student: ");
+    scanf(" %c", &students[*n].sec);
+
+    printf("Enter marks for Computer Science (ISA1, ISA2, ESA): ");
+    scanf("%d %d %d", &students[*n].c[0], &students[*n].c[1], &students[*n].c[2]);
+
+    printf("Enter marks for Physics (ISA1, ISA2, ESA): ");
+    scanf("%d %d %d", &students[*n].phy[0], &students[*n].phy[1], &students[*n].phy[2]);
+
+    printf("Enter marks for Mathematics (ISA1, ISA2, ESA): ");
+    scanf("%d %d %d", &students[*n].math[0], &students[*n].math[1], &students[*n].math[2]);
+
+    (*n)++;
+    printf("Student added successfully.\n");
+    printf("Press any key to continue...");
+    getch();
 }

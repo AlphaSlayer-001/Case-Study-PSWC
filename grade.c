@@ -1,77 +1,72 @@
-#include"header.h"
+#include "headers.h"
 
-void print_grade(student *s, char r_no[14]){
+void grade_card(std **students, int n) {
+    int r;
+    printf("Enter the roll no of the student: \n");
+    scanf("%d", &r); // Corrected the format specifier from %n to %d
 
-    int i;
-    float final_marks[5], gp[5], gpa;
-    // space(3);
-
-    for(i = 0; strcmp(r_no, s[i].roll) != 0; i++){
-        if(i >= 9){
-        printf("\t\t\tNot found !\n");
+    std *student = binary_search(students, n, r);
+    if(student == NULL){
+        printf("Student with roll no. %d is not found !\n", r);
         return;
     }
+
+    system("cls");
+    display_logo();
+    printf("Name: %s\n", student->name);
+    printf("Roll No: %d\n", student->rno);
+    printf("Section: %c\n", student->sec);
+    printf("---------------------------------------------------------\n");
+    printf("Subject       ISA1  ISA2  ESA   Total Marks\n");
+    printf("---------------------------------------------------------\n");
+
+    int total[3];
+    total[0] = (student->c[0] + student->c[1]) / 2 + student->c[2] / 2 + 10;
+    total[1] = (student->phy[0] + student->phy[1]) / 2 + student->phy[2] / 2 + 10;
+    total[2] = (student->math[0] + student->math[1]) / 2 + student->math[2] / 2 + 10;
+    double grade[3];
+    for(int i = 0; i < 3; i++){
+        if(total[i] > 95 && total[i] <= 100)
+            grade[i] = 10.0;
+        else if(total[i] > 85 && total[i] <= 95)
+            grade[i] = 9.5;
+        else if(total[i] > 75 && total[i] <= 85)
+            grade[i] = 8.5;
+        else if(total[i] > 65 && total[i] <= 75)
+            grade[i] = 7.5;
+        else if(total[i] > 55 && total[i] <= 65)
+            grade[i] = 6.5;
+        else if(total[i] > 45 && total[i] <= 55)
+            grade[i] = 5.5;
+        else if(total[i] >= 35 && total[i] <= 45)
+            grade[i] = 5.0;
+        else
+            grade[i] = 0.0;
     }
 
-    printf("\n\n\n\t\t\tThe name of the student is %s\n", s[i].name);
-    printf("\t\t\tThe sec of the student is %c\n", s[i].sec);
+    double gpa = (5.0 * grade[0] + 5.0 * grade[1] + 4.0 * grade[2]) / 14.0;
+    char total_grade;
 
-    printf("\t\t\tThe marks of the student in ISA1:\n");
-    for(int j = 0; j < 5; j++){
-        printf("\t\t\t\t\tSubject %d:- %d\n", j + 1, s[i].isa1[j]);
+    if (gpa >= 9.0) {
+        total_grade = 'S';
+    } else if (gpa >= 8.0) {
+        total_grade = 'A';
+    } else if (gpa >= 7.0) {
+        total_grade = 'B';
+    } else if (gpa >= 6.0) {
+        total_grade = 'C';
+    } else if (gpa >= 5.0) {
+        total_grade = 'D';
+    } else {
+        total_grade = 'F';
     }
 
-    printf("\t\t\tThe marks of the student in ISA2:\n");
-    for(int j = 0; j < 5; j++){
-        printf("\t\t\t\t\tSubject %d:- %d\n", j + 1, s[i].isa2[j]);
-    }  
-
-    printf("\t\t\tThe marks of the student in ESA:\n");
-    for(int j = 0; j < 5; j++){
-        printf("\t\t\t\t\tSubject %d:- %d\n", j + 1, s[i].esa[j]);
-    }
-
-    for(int j = 0; j < 5; j++){
-        final_marks[j] = (float)((s[i].isa1[j] + s[i].isa2[j]) / 2) + (float)(s[i].esa[j] / 2);
-    } 
-    printf("\t\t\tThe final marks of the student:\n");
-    for(int j = 0; j < 5; j++){
-        printf("\t\t\t\t\tSubject %d:- %.2f\n", j + 1, final_marks[j]);
-    }
-
-    printf("\t\t\tThe grades of the student:\n");
-    for(int j = 0; j < 5; j++){
-        if(final_marks[j] > 90 && final_marks[j] <= 100){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'S');
-            gp[j] = 10.0;
-        }
-        else if(final_marks[j] > 80 && final_marks[j] <= 90){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'A');
-            gp[j] = 9.0;
-        }
-        else if(final_marks[j] > 70 && final_marks[j] <= 80){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'B');
-            gp[j] = 8.0;
-        }
-        else if(final_marks[j] > 60 && final_marks[j] <= 70){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'C');
-            gp[j] = 7.0;    
-        }
-        else if(final_marks[j] > 50 && final_marks[j] <= 60){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'D');
-            gp[j] = 6.0;
-        }
-        else if(final_marks[j] > 35 && final_marks[j] <= 50){
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'E');
-            gp[j] = 5.0;
-        }
-        else{
-            printf("\t\t\t\t\tSubject %d:- %c\n", j + 1, 'F');
-            gp[j] = 0.0;
-        }
-    }
-
-    gpa = (5 * gp[0] + 5 * gp[1] + 4 * gp[2] + 4* gp[3] + 3 * gp[4]) / 21.0 ;
-    printf("\t\t\tThe gpa of the student is %.2f\n", gpa);
-
+    printf("Computer Sci  %3d   %3d   %3d   %5d\n", student->c[0], student->c[1], student->c[2], total[0]);
+    printf("Physics       %3d   %3d   %3d   %5d\n", student->phy[0], student->phy[1], student->phy[2], total[1]);
+    printf("Mathematics   %3d   %3d   %3d   %5d\n", student->math[0], student->math[1], student->math[2], total[2]);
+    printf("\n\nGPA       %.2f\n", (gpa > 0) ? gpa : 0);
+    printf("Grade         %c\n", total_grade);
+    printf("---------------------------------------------------------\n");
+    printf("Press any key to continue...");
+    getch();
 }

@@ -1,20 +1,30 @@
+#ifndef HEADERS_H
+#define HEADERS_H
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<windows.h>
-#include<unistd.h>
+#include<conio.h>
 
-typedef struct student{
-    char roll[14];
-    char name[100];
+#define MAX_NO_STUDENTS 100
+
+typedef struct student {
+    char name[50];
+    int rno;
     char sec;
-    int isa1[5];
-    int isa2[5];
-    int esa[5];
-}student;
+    int c[3];
+    int phy[3];
+    int math[3];
+} std;
 
-void display();
-void print_grade(student *s, char r_no[14]);
-void star(int n);
-void update(student *p, char r_n[14]);
-void add(student *s, int *num);
+int read(FILE *fp, std *s);
+void bubble_sort(std *arr[], int n);
+std *binary_search(std *arr[], int n, int r);
+void display_logo();
+void grade_card(std **s, int n);
+void update_marks(std **students, int n);
+void add_new_student(std *students, int *n);
+void delete_student(std *students, int *n);
+void write(FILE *fp, std *s, int n);
+
+#endif
