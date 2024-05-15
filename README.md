@@ -31,7 +31,7 @@ To run the program locally, follow these steps:
     cd Case-Study-PWSC
     ```
 3. Compile the source code:
-    - Linux:
+    - Linux or Windows with gcc:
     ```
     make -f makefile.mk
     ```
