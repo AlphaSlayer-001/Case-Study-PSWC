@@ -2,7 +2,7 @@
 
 void grade_card(std **students, int n) {
     int r;
-    printf("Enter the roll no of the student: \n");
+    printf("Enter the roll no of the student (between 1 and %d: \n", n);
     scanf("%d", &r); // Corrected the format specifier from %n to %d
 
     std *student = binary_search(students, n, r);
